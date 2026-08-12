@@ -827,7 +827,7 @@ Users can search, register, bookmark, cancel registration and manage teams.
 
 ## Hackathon Listing
 
-![Hackathon Listing](screenshots/hackathon-list.png)
+![Hackathon List](screenshots/hackathon-list.png)
 
 Hackathons are displayed with information such as:
 
