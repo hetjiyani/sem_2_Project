@@ -1,679 +1,1158 @@
-# sem_2_Project
-🚀 Hackathon Discovery & Management Platform
+# 🚀 Hackathon Discovery Platform
 
-A Java + MySQL-based Hackathon Discovery and Management Platform designed to help students/developers discover hackathons, register for them, build teams, receive recommendations, and get AI-powered guidance — while allowing organizations to create and manage their hackathons.
+A **Java + MySQL based Hackathon Discovery Platform** that brings hackathon discovery, registration, team management, personalized recommendations, AI assistance, organization management, and administration into one system.
 
-📌 Project Overview
+The project is designed for students/developers who want to **find hackathons, prepare for them, build teams, register, and get personalized guidance** from a single platform.
 
-Hackathons are announced across many different platforms, websites, communities, and social media channels. Because information is scattered, students often miss suitable hackathons or struggle to find teammates.
+---
 
-This project provides a centralized platform where:
+## 📌 Project Overview
 
-👨‍💻 Users can create profiles and manage their skills.
-🏢 Organizations can register and publish hackathons.
-🔎 Users can search and filter hackathons.
-🤝 Users can create and join teams.
-🎯 The system recommends hackathons based on user skills.
-🤖 Gemini AI provides learning roadmaps and project ideas.
-📧 Users receive email notifications.
-🔖 Users can bookmark hackathons.
-👨‍💼 Administrators can manage the complete platform.
-📊 Admins can view statistics, users, organizations, teams, registrations, etc.
-✨ Key Features
-👤 User Module
-Registration & Login
+Hackathons are announced across different platforms and communities. Students may miss opportunities because information is scattered and because it can be difficult to know:
 
-Users can create an account by providing their details and then log in securely using their credentials.
+- Which hackathon matches their skills
+- Which skills they need to improve
+- Which team they should join
+- What project idea they can build
+- Which hackathons are suitable for them
 
-Profile Management
+This project solves these problems by providing a centralized **Hackathon Discovery and Management Platform**.
+
+---
+
+## 🎯 Main Objectives
+
+- Provide a single platform for discovering hackathons
+- Allow users to create and manage profiles
+- Allow organizations to publish and manage hackathons
+- Provide hackathon search and filtering
+- Allow users to register for hackathons
+- Support team creation and team joining
+- Provide skill-based hackathon recommendations
+- Provide AI-powered learning roadmaps
+- Provide AI-powered project ideas and chatbot assistance
+- Recommend teams based on skills
+- Send email notifications to users
+- Provide an admin panel for system management and statistics
+- Maintain organization audit information
+
+---
+
+# 👥 User Roles
+
+The system has three main roles:
+
+```text
+=============================
+      HACKATHON PLATFORM
+=============================
+
+1. User
+2. Organization
+3. Admin
+4. Exit
+```
+
+---
+
+# 👤 1. USER MODULE
+
+A user can register/login and access the following modules.
+
+## 🔐 User Authentication
+
+```text
+=========== HACKATHON PORTAL ===========
+
+1. Register
+2. Login
+3. Exit
+```
+
+Users register with their basic information and can later log in using their credentials.
+
+---
+
+## 👤 User Menu
+
+```text
+=========== USER MENU ===========
+
+1. Profile
+2. Hackathons
+3. Recommendations
+4. Filter Hackathons
+5. Logout
+```
+
+---
+
+## 🧑 Profile Management
 
 Users can:
 
-View their profile
-Edit their profile
-Manage their skills
-Manage their interests
+- View Profile
+- Edit Profile
+- Manage skills
+- Manage interests
 
-Example profile information:
+User skills are stored in the database and are used by the recommendation system.
 
-User ID
-Name
-Email
-City
-Skills
-Interests
-Created At
-🏆 Hackathon Module
+---
+
+# 🏆 Hackathon Module
+
+The user can access:
+
+```text
+=========== HACKATHONS ===========
+
+1. View All Hackathons
+2. Search Hackathon
+3. Create Team
+4. Join Team
+5. Leave Team
+6. View Teams
+7. View Team Members
+8. Register for Hackathon
+9. Bookmark Hackathon
+10. Cancel Registration
+11. Team Leaderboard
+12. Search History
+13. Clear Search History
+14. Exit
+```
+
+### Hackathon Features
 
 Users can:
 
-View available hackathons
-Search hackathons
-Filter hackathons
-View hackathon details
-Register for hackathons
-Cancel registration
-Bookmark hackathons
+- View available hackathons
+- Search hackathons
+- View hackathon details
+- Register for hackathons
+- Cancel registrations
+- Bookmark hackathons
+- Create teams
+- Join teams
+- Leave teams
+- View teams
+- View team members
+- View team leaderboard
+- Maintain search history
 
-Hackathon information includes:
+---
 
-Hackathon ID
-Title
-Location
-Mode
-Prize Pool
-Start Date
-End Date
-Registration Deadline
-Maximum Participants
-Current Participants
-🔎 Search & Filter
+# 🔎 Hackathon Filtering
 
-Users can find suitable hackathons using different criteria such as:
+The platform provides multiple filtering options:
 
-Hackathon title
-Location
-Mode
-Prize pool
-Date
-Registration deadline
+```text
+===== Filter Hackathons =====
 
-This makes it easier to find relevant opportunities without manually searching multiple websites.
+1. City + Mode + Prize Range
+2. Search by Title Keyword
+3. Filter by Skill
+4. Filter by Domain
+5. Only Open Seats
+6. Filter by Status
+7. Trending Hackathons
+8. Combined Filter (City + Skill)
+```
 
-🤝 Team Management
+This helps users quickly find hackathons relevant to their requirements.
 
-Users can collaborate with other participants through teams.
+---
 
-Team Features
-Create Team
-Join Team
-Leave Team
-View Teams
-View Team Members
-Team Leaderboard
+# 🤖 Recommendation System
 
-Teams contain information such as:
+The recommendation module contains:
 
-Team ID
-Hackathon ID
-Team Name
-Maximum Capacity
-Status
-Created At
-Leader User ID
+```text
+========== RECOMMENDATIONS ==========
 
-Team members are maintained separately using:
+1. Recommended Best Hackathons
+2. Recommended Roadmap
+3. Project Ideas / AI Chatbot
+4. Recommended Join Team
+5. Exit
+```
 
-Team ID
-User ID
-Joined At
-📝 Hackathon Registration
+---
 
-Users can register for hackathons.
-
-The system maintains:
-
-Registration ID
-User ID
-Hackathon ID
-Status
-Waitlist Position
-Registered At
-
-The platform can maintain different registration states such as:
-
-REGISTERED
-WAITLISTED
-CANCELLED
-
-When a user cancels a registration, the registration status is updated rather than simply losing the registration record.
-
-🔖 Bookmark / Watchlist
-
-Users can bookmark hackathons that they are interested in.
-
-This allows users to easily find interesting hackathons later.
-
-Example:
-
-User
- ↓
-Bookmark Hackathon
- ↓
-Watchlist
-🎯 Recommendation System
-
-One of the major features of the project is the recommendation system.
-
-The project uses the user's skills and hackathon-required skills to find suitable hackathons.
-
-Example
-
-User skills:
-
-Java
-SQL
-HTML
-CSS
-
-Hackathon required skills:
-
-Java
-SQL
-Python
-Machine Learning
-
-The system calculates:
-
-Matched Skills = 2
-
-Hackathons are then ranked according to skill matches.
-
-Recommended Best Hackathons
-
-The system can display the top matching hackathons for a user.
-
-Hackathon ID : 12
-Matched Skills : 4
-
-Hackathon ID : 7
-Matched Skills : 3
-
-Hackathon ID : 19
-Matched Skills : 2
-
-This recommendation is implemented using DBMS/SQL-based logic.
-
-🤝 Recommended Teams
-
-The platform also helps users find teams that match their skills.
+## 🧠 1. Recommended Best Hackathons — DBMS
 
 The system compares:
 
+```text
 User Skills
+      ↓
+Required Hackathon Skills
+      ↓
+Skill Matching
+      ↓
+Match Count
+      ↓
+Top Recommended Hackathons
+```
+
+The user's skills are retrieved from the database and compared with the skills required by hackathons.
+
+The hackathons with the highest skill match are recommended first.
+
+---
+
+## 📚 2. Recommended Roadmap — Gemini AI
+
+The system collects information such as:
+
+- User skills
+- Skill proficiency
+- User interests
+- Registered hackathons
+- Required hackathon skills
+
+This information is converted into an AI prompt and sent to the **Gemini API**.
+
+The AI generates:
+
+- Missing skills
+- Recommended learning topics
+- Learning order
+- Useful technologies/tools
+- Preparation guidance
+- Readiness assessment
+
+---
+
+## 💡 3. Project Ideas / AI Chatbot
+
+The project includes a Gemini-powered chatbot.
+
+Users can ask questions such as:
+
+```text
+You: hello
+
+You: tell some features to add in my
+project hackathon portal to stand out
+```
+
+The chatbot can help with:
+
+- Project ideas
+- Hackathon preparation
+- Feature suggestions
+- Technology suggestions
+- Problem-solving guidance
+- General hackathon-related questions
+
+---
+
+## 🤝 4. Recommended Join Team — DBMS
+
+The team recommendation system compares:
+
+```text
+User Skills
+      ↓
+Team Members' Skills
       ↓
 Hackathon Required Skills
       ↓
-Team / Team Members
+Missing / Covered Skills
       ↓
-Missing Skills
-      ↓
-Recommended Team
+Recommended Teams
+```
 
 This helps users find teams where their skills can contribute.
 
-🤖 Gemini AI Integration
+---
 
-The project integrates Gemini API for AI-powered features.
-
-AI Roadmap
-
-Based on the user's:
-
-Skills
-Interests
-Previous hackathons
-Required skills
-
-the AI generates a learning roadmap.
-
-Example:
-
-Current Skill:
-Java
-
-Recommended Roadmap:
-
-1. Advanced Java
-2. JDBC
-3. REST APIs
-4. Spring Boot
-5. Database Optimization
-💡 AI Project Ideas / Chatbot
-
-Users can also interact with an AI assistant to generate project ideas.
-
-The AI can consider:
-
-User Skills
-User Interests
-Hackathon Requirements
-Previous Experience
-
-and generate suitable project ideas.
-
-Example:
-
-Project Idea:
-Smart Campus Management System
-
-Technologies:
-Java
-MySQL
-HTML/CSS
-AI
-📧 Email Notification System
-
-The project includes an email notification system using JavaMail/Jakarta Mail and Gmail SMTP.
-
-Users can receive emails related to hackathons.
-
-For example:
-
-New Hackathon Added
-
-Hackathon:
-AI Innovation Challenge
-
-Prize Pool:
-₹50,000
-
-Start Date:
-2026-09-10
-
-Registration Deadline:
-2026-09-05
-
-This helps users stay updated about new opportunities.
-
-🏢 Organization Module
+# 🏢 2. ORGANIZATION MODULE
 
 Organizations can register and manage their hackathons.
 
-Organization Registration
+## Organization Menu
 
-Organizations can provide:
-
-Organization Name
-Email
-Password
-Contact Person
-Phone
-Website
-Organization Type
-City
-
-Organization types can include:
-
-Company
-College
-University
-Startup
-Community
-NGO
-🏆 Organization Hackathon Management
-
-After login, organizations get their own panel.
-
+```text
 ========== ORGANIZATION PANEL ==========
 
 1. Add Hackathon
 2. Delete Hackathon
 3. View My Hackathons
 4. Logout
-Add Hackathon
+```
 
-Organizations can create hackathons with:
+---
 
-Title
-Location
-Mode
-Prize Pool
-Start Date
-End Date
-Registration Deadline
-Maximum Participants
+## 📝 Organization Registration
 
-The newly created hackathon is associated with the organization through:
+Organizations provide information such as:
 
-organizationhackthone
+- Organization name
+- Email
+- Password
+- Contact person
+- Phone
+- Website
+- Organization type
+- City
 
-Relationship:
+Supported organization types include:
 
+- Company
+- College
+- University
+- Startup
+- Community
+- NGO
+- Other
+
+---
+
+## ➕ Add Hackathon
+
+An organization can create a hackathon by entering:
+
+- Title
+- Location city
+- Mode
+- Prize pool
+- Start date
+- End date
+- Registration deadline
+- Maximum participants
+
+The system automatically stores the relationship between:
+
+```text
 Organization
-     |
-     | creates
-     ↓
+      ↓
 Hackathon
-🗑️ Delete Hackathon
+```
 
-Organizations can delete their hackathons.
+using the `organizationhackthone` table.
 
-The project also maintains an organization audit log so that important actions such as hackathon deletion can be recorded.
+---
 
-This provides better traceability and administration.
+## ❌ Delete Hackathon
 
-👨‍💼 Admin Module
+Organizations can delete hackathons that they have created.
 
-The project includes a separate Admin module.
+The system also maintains organization audit information for hackathon-related actions.
 
-The Admin has a common login ID and password.
+---
 
-After successful authentication, the Admin gets access to different management sections.
+## 👀 View My Hackathons
 
-👤 Admin User Management
+An organization can view only the hackathons associated with its organization ID.
 
-Admin can:
+---
 
-View Users
-Search Users
-Delete Users
-View User Profiles
-View User Skills
-🏢 Admin Organization Management
+# 📧 Email Notification System
 
-Admin can:
+The project uses JavaMail with Gmail SMTP to send email notifications.
 
-View Organizations
-Search Organizations
-Delete Organizations
-View Organization Hackathons
-🏆 Admin Hackathon Management
+Example use cases:
 
-Admin can:
+- Hackathon registration confirmation
+- Hackathon-related notifications
+- Joining/team-related notifications
+- New hackathon notifications
 
-View Hackathons
-Delete Hackathons
-View Hackathon Details
-📝 Admin Registration Management
+Basic flow:
 
-Admin can:
+```text
+User registers
+      ↓
+Registration stored in MySQL
+      ↓
+Email notification
+      ↓
+User receives confirmation
+```
 
-View registrations
-View cancelled registrations
-View waitlisted registrations
-🤝 Admin Team Management
+> ⚠️ For security, Gmail App Passwords should not be stored directly in source code. Use environment variables or a secure configuration file when publishing the project.
 
-Admin can:
+---
 
-View Teams
-Delete Teams
-View Team Members
-📊 Admin Statistics
+# 🛡️ 3. ADMIN MODULE
 
-The Admin can view platform statistics such as:
+The admin controls and monitors the platform.
 
-Total Users
-Total Organizations
-Total Hackathons
-Total Teams
-Most Popular Hackathon
+The admin login uses a predefined/common administrator ID and password.
 
-The most popular hackathon can be determined using the number of current participants.
+After successful authentication, the admin can access management modules such as:
 
-🗄️ Database Design
+- Users
+- Organizations
+- Hackathons
+- Registrations
+- Teams
+- Statistics
 
-The project uses MySQL as its database.
+---
 
-Main database:
+## 👨‍💼 Admin Modules
 
+### Admin User
+
+- View users
+- Search users
+- View user profile
+- Delete users
+
+### Admin Organization
+
+- View organizations
+- Search organizations
+- Delete organizations
+- View organization hackathons
+
+### Admin Hackathon
+
+- View hackathons
+- Delete hackathons
+- View hackathon details
+
+### Admin Registration
+
+- View registrations
+- View cancelled registrations
+- View waitlisted registrations
+- Registration statistics
+
+### Admin Team
+
+- View teams
+- Delete teams
+- View team members
+
+### Admin Statistics
+
+- Total users
+- Total organizations
+- Total hackathons
+- Total teams
+- Most popular hackathon
+- Other platform statistics
+
+---
+
+# 🗄️ DATABASE DESIGN
+
+The project uses **MySQL** with the database:
+
+```text
 hackthone
-Major Tables
+```
+
+Main tables include:
+
+```text
 users
 organization
 hackathons
+organizationhackthone
 skills
 userskills
 userinterests
+domaininterests
+hackathondomain
 hackathonskillrequired
 registration
 teams
 teammembers
 watchlist
+recommendationlog
+```
+
+---
+
+## 👤 Users
+
+Stores user information.
+
+```text
+users
+-----------------------------
+user_id
+name
+email
+city
+created_at
+```
+
+---
+
+## 🏢 Organization
+
+Stores organization information.
+
+```text
+organization
+-----------------------------
+organization_id
+organization_name
+email
+password
+contact_person
+phone
+website
+organization_type
+city
+```
+
+---
+
+## 🏆 Hackathons
+
+Stores hackathon information.
+
+```text
+hackathons
+-----------------------------
+hackathon_id
+title
+location_city
+mode
+prize_pool
+start_date
+end_date
+registration_deadline
+max_participants
+current_participants
+```
+
+---
+
+## 🔗 Organization-Hackathon Relationship
+
+```text
 organizationhackthone
-organization_auditLog
-🔗 Database Relationships
+-----------------------------
+organization_id
+hackthone_id
+```
 
-A simplified relationship structure:
+This table connects organizations with the hackathons they create.
 
-                    ┌──────────────┐
-                    │    USERS     │
-                    └──────┬───────┘
+---
+
+## 🧑‍💻 Skills
+
+```text
+skills
+-----------------------------
+skill_id
+skill_name
+```
+
+User skills are connected through:
+
+```text
+userskills
+-----------------------------
+user_id
+skill_id
+```
+
+---
+
+## 🏆 Hackathon Required Skills
+
+```text
+hackathonskillrequired
+-----------------------------
+hackathon_id
+skill_id
+```
+
+This table is used by the recommendation system.
+
+---
+
+## 📝 Registration
+
+```text
+registration
+-----------------------------
+registration_id
+user_id
+hackathon_id
+status
+waitlist_position
+registered_at
+```
+
+Possible registration states can include:
+
+```text
+REGISTERED
+WAITLISTED
+CANCELLED
+```
+
+---
+
+## 👥 Teams
+
+```text
+teams
+-----------------------------
+team_id
+hackathon_id
+team_name
+max_capacity
+status
+created_at
+leader_user_id
+```
+
+Team members are stored in:
+
+```text
+teammembers
+-----------------------------
+team_id
+user_id
+joined_at
+```
+
+---
+
+## 🔖 Watchlist
+
+The watchlist/bookmark feature stores hackathons saved by users.
+
+```text
+watchlist
+-----------------------------
+watchlist_id
+user_id
+hackathon_id
+added_at
+```
+
+---
+
+# 🧩 PROJECT ARCHITECTURE
+
+The project is organized using Java classes according to functionality.
+
+```text
+src
+│
+├── Admin
+│   ├── admin.java
+│   ├── AdminUser.java
+│   ├── AdminOrganization.java
+│   ├── AdminHackathon.java
+│   ├── AdminRegistration.java
+│   ├── AdminStatistics.java
+│   └── AdminTeam.java
+│
+└── pro1
+    ├── MainApp.java
+    ├── Main.java
+    ├── User.java
+    ├── organization.java
+    ├── Hackathon.java
+    ├── Registration.java
+    ├── Team.java
+    ├── Watchlist.java
+    ├── Recommendation.java
+    ├── recommendation_for_Best_hackthone.java
+    ├── Recommendation_for_Learning.java
+    ├── Recommendation_project_idea.java
+    ├── Recommendation_To_Join_team.java
+    ├── HackathonFilterDAO.java
+    ├── Mailer.java
+    ├── mail_for_joining.java
+    ├── organization_audit_log.java
+    └── ai.java
+```
+
+---
+
+# 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| Java | Main programming language |
+| OOP | Project structure and modular design |
+| JDBC | Java-MySQL connectivity |
+| MySQL | Database management |
+| SQL | Data storage and querying |
+| Gemini API | AI chatbot, learning roadmap and project ideas |
+| JavaMail | Email notifications |
+| Git | Version control |
+| GitHub | Source code management |
+
+---
+
+# 🔄 Overall System Flow
+
+```text
+                    ┌───────────────┐
+                    │     START     │
+                    └───────┬───────┘
+                            │
+                            ▼
+              ┌─────────────────────────┐
+              │ Select User /           │
+              │ Organization / Admin    │
+              └────────────┬────────────┘
                            │
-            ┌──────────────┼───────────────┐
-            │              │               │
-            ▼              ▼               ▼
-       USERSKILLS     REGISTRATION     TEAMMEMBERS
-            │              │               │
-            ▼              ▼               ▼
-         SKILLS       HACKATHONS        TEAMS
-                           ▲               │
-                           │               │
-                           └───────────────┘
-                           
-       ORGANIZATION
-             │
-             ▼
-   ORGANIZATIONHACKTHONE
-             │
-             ▼
-        HACKATHONS
-🛠️ Technologies Used
-Technology	Purpose
-Java	Main application development
-OOP	Modular project architecture
-JDBC	Java ↔ MySQL communication
-MySQL	Database management
-SQL	Queries, joins, filtering and recommendations
-Gemini API	AI recommendations, roadmaps and project ideas
-Jakarta Mail	Email notifications
-Maven	Dependency management
-Git	Version control
-GitHub	Project hosting
-🧱 Java OOP Structure
+        ┌──────────────────┼──────────────────┐
+        ▼                  ▼                  ▼
+      USER           ORGANIZATION           ADMIN
+        │                  │                  │
+        ▼                  ▼                  ▼
+   Profile           Add Hackathon       Manage Users
+   Hackathons        Delete Hackathon     Manage Organizations
+   Teams             View Hackathons      Manage Hackathons
+   Registration                           Manage Registrations
+   Bookmark                              Manage Teams
+   Filters                               Statistics
+   Recommendations
+        │
+        ▼
+   DBMS + Gemini AI
+        │
+        ▼
+   Email Notifications
+```
 
-The project is divided into multiple classes instead of putting everything into one class.
+---
 
-Example:
+# ⭐ Key Features
 
-pro1/
-│
-├── Main
-├── User
-├── Hackathon
-├── Team
-├── Registration
-├── Watchlist
-├── Recommendation
-├── Recommendation_for_Best_hackthone
-├── Recommendation_To_Join_team
-├── Recommendation_for_Learning
-├── Mailer
-├── mail_for_joining
-│
-└── Admin/
-    ├── admin
-    ├── AdminUser
-    ├── AdminOrganization
-    ├── AdminHackathon
-    ├── AdminRegistration
-    ├── AdminTeam
-    ├── AdminStatistics
-    └── AdminAuditLog
+## For Users
 
-This makes the application easier to maintain and extend.
+- Registration and Login
+- Profile management
+- Skill management
+- Interest management
+- Hackathon discovery
+- Hackathon search
+- Advanced filtering
+- Hackathon registration
+- Registration cancellation
+- Waitlist support
+- Bookmark/watchlist
+- Team creation
+- Team joining
+- Team leaving
+- Team member viewing
+- Team leaderboard
+- Search history
+- Search history clearing
+- Skill-based recommendations
+- AI learning roadmap
+- AI project ideas
+- Gemini AI chatbot
+- Team recommendations
+- Email notifications
 
-🔄 Overall Application Flow
-                    START
-                      │
-                      ▼
-             Select User / Organization
-                      │
-          ┌───────────┴───────────┐
-          │                       │
-          ▼                       ▼
-        USER                ORGANIZATION
-          │                       │
-     Register/Login          Register/Login
-          │                       │
-          ▼                       ▼
-     User Dashboard       Organization Panel
-          │                       │
-    ┌─────┼─────┐           ┌─────┼─────┐
-    │     │     │           │     │     │
-    ▼     ▼     ▼           ▼     ▼     ▼
- Profile Hackathon Team    Add  Delete View
-    │      │      │       Hackathon
-    │      │      │
-    └──────┼──────┘
-           ▼
-     Recommendations
-           │
-     ┌─────┴─────┐
-     ▼           ▼
-    DBMS        Gemini AI
-Recommendation  Roadmap/
-                Ideas
-🧠 Recommendation Architecture
+## For Organizations
 
-The project combines traditional database logic with AI.
+- Organization registration
+- Organization login
+- Add hackathon
+- Delete hackathon
+- View own hackathons
+- Organization-hackathon mapping
+- Audit logging
 
-DBMS Recommendation
+## For Admin
 
-Used for:
+- Admin authentication
+- User management
+- Organization management
+- Hackathon management
+- Registration management
+- Team management
+- Platform statistics
 
-Best Hackathon
-Recommended Team
+---
 
-The system compares skill IDs stored in the database.
+# 🖥️ Application Screenshots
 
-AI Recommendation
+The following screenshots show the actual console interface of the project.
 
-Used for:
+> Put your screenshots inside a folder named `screenshots` in the GitHub repository and use the same filenames referenced below.
 
-Learning Roadmap
-Project Ideas
-AI Chatbot
+---
 
-This creates a hybrid recommendation system:
+## Main Menu
 
-              User Data
-                  │
-          ┌───────┴────────┐
-          │                │
-          ▼                ▼
-        MySQL           Gemini AI
-          │                │
-          ▼                ▼
-     Skill Matching    AI Analysis
-          │                │
-          └───────┬────────┘
-                  ▼
-          Personalized Result
-🔐 Security & Data Integrity
+![Main Menu](screenshots/main-menu.png)
 
-The project uses:
+The main menu allows the user to select:
 
-PreparedStatement to avoid SQL injection in database queries.
-Primary keys for unique records.
-Foreign keys for relationships.
-ON DELETE CASCADE where appropriate.
-Database constraints.
-Login validation.
-Registration duplicate checking.
-📈 Future Improvements
+```text
+1. User
+2. Organization
+3. Admin
+4. Exit
+```
+
+---
+
+## User Login
+
+![User Login](screenshots/user-login.png)
+
+Users can register or log in using their credentials.
+
+---
+
+## User Menu
+
+![User Menu](screenshots/user-menu.png)
+
+The user menu provides access to profile, hackathons, recommendations and filtering.
+
+---
+
+## Hackathon Menu
+
+![Hackathon Menu](screenshots/hackathons-menu.png)
+
+Users can search, register, bookmark, cancel registration and manage teams.
+
+---
+
+## Hackathon Listing
+
+![Hackathon Listing](screenshots/hackathon-list.png)
+
+Hackathons are displayed with information such as:
+
+- ID
+- Title
+- Organization
+- Mode
+- City
+- Prize
+- Seats
+- Start date
+
+---
+
+## Recommendation Menu
+
+![Recommendation Menu](screenshots/recommendation-menu.png)
+
+Users can select between DBMS-based and AI-based recommendations.
+
+---
+
+## AI Learning Recommendation
+
+![AI Learning Recommendation](screenshots/ai-learning.png)
+
+The AI analyzes the user's skills and identifies missing skills and recommended learning paths.
+
+---
+
+## Gemini AI Chatbot
+
+![Gemini AI Chatbot](screenshots/ai-chatbot.png)
+
+The chatbot can answer questions and suggest new features and ideas for the hackathon project.
+
+---
+
+## Hackathon Filters
+
+![Hackathon Filters](screenshots/hackathon-filter.png)
+
+Users can filter hackathons using city, mode, prize range, skill, domain, seats and status.
+
+---
+
+## Organization Panel
+
+![Organization Panel](screenshots/organization-panel.png)
+
+Organizations can:
+
+```text
+1. Add Hackathon
+2. Delete Hackathon
+3. View My Hackathons
+4. Logout
+```
+
+---
+
+# 🔐 Security Considerations
+
+The current academic project uses JDBC and a MySQL database.
+
+For a production version, the following improvements are recommended:
+
+- Hash passwords using BCrypt/Argon2
+- Store API keys in environment variables
+- Store Gmail App Passwords securely
+- Use connection pooling
+- Add stronger input validation
+- Use role-based authorization
+- Add transaction handling for multi-table operations
+- Avoid storing sensitive credentials in source code
+
+---
+
+# 🚀 Future Enhancements
 
 Possible future improvements include:
 
-🌐 Web-based frontend
-📱 Android/mobile application
-🔔 Real-time push notifications
-🔍 More advanced hackathon search
-🧠 ML-based recommendation system
-📊 Admin dashboard with charts
-☁️ Cloud database
-🔐 Password hashing instead of storing plain passwords
-🔑 Role-based authentication
-📡 Automated hackathon data collection from permitted external sources
-📅 Calendar integration
-👥 Advanced team matching
-💬 Real-time team chat
-🎯 Project Goals
+- Web-based GUI
+- Spring Boot backend
+- React/Angular frontend
+- Mobile application
+- Automated hackathon data collection
+- Push notifications
+- OAuth login
+- Advanced AI team formation
+- AI-based hackathon success prediction
+- Real-time team chat
+- Calendar integration
+- Hackathon reminders
+- Organizer analytics dashboard
+- Leaderboards and badges
+- Cloud deployment
 
-The main goals of this project are:
+---
 
-Centralize hackathon information
-Help users discover suitable hackathons
-Make team formation easier
-Provide personalized recommendations
-Use AI to provide learning guidance
-Notify users about new opportunities
-Give organizations a platform to publish hackathons
-Provide administrators with complete platform management
-⭐ Why This Project Is Different
+# 📊 Core Recommendation Logic
 
-The project is not simply a hackathon listing system.
+### Best Hackathon
 
-It combines:
+```text
+User Skills
+     +
+Hackathon Required Skills
+     ↓
+Calculate Skill Matches
+     ↓
+Sort by Match Count
+     ↓
+Top Hackathons
+```
 
-Hackathon Discovery
-        +
-User Profiles
-        +
-Skill Management
-        +
-Team Formation
-        +
-DBMS Recommendations
-        +
-AI Recommendations
-        +
-Email Notifications
-        +
-Organization Management
-        +
-Admin Management
+### Learning Roadmap
 
-This makes it a complete Hackathon Discovery, Team Formation & Management Platform.
+```text
+User Skills
+User Interests
+Registered Hackathons
+Required Skills
+        ↓
+     Gemini AI
+        ↓
+Missing Skills
+Learning Order
+Useful Technologies
+Readiness Assessment
+```
 
-🚀 Getting Started
-1. Clone the repository
-git clone https://github.com/hetjiyani/sem_2_Project.git
-2. Create the MySQL database
+### Team Recommendation
+
+```text
+User Skills
+     +
+Team Member Skills
+     +
+Hackathon Required Skills
+        ↓
+Skill Gap Analysis
+        ↓
+Recommended Teams
+```
+
+---
+
+# 📁 Project Highlights
+
+This project demonstrates practical implementation of:
+
+- Java OOP
+- Classes and objects
+- Encapsulation
+- Modular programming
+- JDBC
+- PreparedStatement
+- ResultSet
+- SQL joins
+- Relational database design
+- Many-to-many relationships
+- CRUD operations
+- Authentication
+- Team management
+- Recommendation algorithms
+- AI API integration
+- Email integration
+- Audit logging
+- Search and filtering
+- Admin management
+
+---
+
+# ▶️ How to Run
+
+## 1. Clone the Repository
+
+```bash
+git clone <your-github-repository-url>
+```
+
+## 2. Create MySQL Database
+
+Create:
+
+```sql
 CREATE DATABASE hackthone;
-3. Import the project SQL file
+```
 
-Import your database .sql file into MySQL/phpMyAdmin.
+Import the project's SQL file into the database.
 
-4. Configure JDBC
+## 3. Configure Database
 
-Update the connection details in Java:
+The current JDBC configuration uses:
 
-Connection con = DriverManager.getConnection(
-    "jdbc:mysql://localhost:3306/hackthone",
-    "root",
-    ""
-);
-5. Add required dependencies
+```text
+Host: localhost
+Port: 3306
+Database: hackthone
+Username: root
+Password: ""
+```
 
-Make sure MySQL JDBC and Jakarta Mail dependencies are available in the project.
+Change these values if your MySQL configuration is different.
 
-6. Run
+## 4. Add Required Libraries
 
-Run the main Java class:
+Make sure the project contains:
 
-Main / main_1
-👨‍💻 Project Summary
+- MySQL Connector/J
+- Jakarta Mail
+- Gemini API dependencies/configuration
 
-Hackathon Discovery & Management Platform is a Java-based DBMS project that provides a centralized ecosystem for students, developers, hackathon organizers, and administrators.
+## 5. Configure Gemini API
 
-Users can discover hackathons, manage profiles, register, bookmark events, create and join teams, and receive personalized recommendations. Organizations can publish and manage hackathons, while administrators can manage users, organizations, registrations, teams, and hackathons.
+Store the Gemini API key securely as an environment variable rather than directly in source code.
 
-The project combines Java OOP + JDBC + MySQL + DBMS-based recommendation algorithms + Gemini AI + Email Notification, making it a comprehensive application for hackathon discovery and management.
+## 6. Run the Application
 
-📌 Project Tags
-Java
-Java-OOP
-JDBC
-MySQL
-DBMS
-Gemini-AI
-Jakarta-Mail
-Hackathon
-Recommendation-System
-Team-Management
-Hackathon-Management
-AI-Chatbot
-Email-Notification
-GitHub
-Maven
+Run the main application class.
+
+```text
+MainApp.java
+```
+
+or the project's configured main class.
+
+---
+
+# 🧪 Example User Journey
+
+```text
+User
+ ↓
+Register
+ ↓
+Login
+ ↓
+Complete Profile
+ ↓
+Add Skills & Interests
+ ↓
+View Hackathons
+ ↓
+Filter/Search
+ ↓
+Get Recommendations
+ ↓
+Register for Hackathon
+ ↓
+Create / Join Team
+ ↓
+Get AI Learning Roadmap
+ ↓
+Get Project Ideas
+ ↓
+Receive Email Notifications
+```
+
+---
+
+# 🏢 Example Organization Journey
+
+```text
+Organization
+ ↓
+Register
+ ↓
+Login
+ ↓
+Add Hackathon
+ ↓
+Hackathon Stored in Database
+ ↓
+Organization-Hackathon Mapping
+ ↓
+Users Discover Hackathon
+ ↓
+Users Register
+ ↓
+Organization Views Its Hackathons
+ ↓
+Delete Hackathon if Required
+```
+
+---
+
+# 👨‍💻 Author
+
+**Het Jiyani**
+
+B.Tech Computer Engineering Student
+
+---
+
+# 📜 License
+
+This project is developed as an academic/educational project.
+
+You are free to study and modify the project for learning purposes.
+
+---
+
+# ⭐ Project Summary
+
+**Hackathon Discovery Platform** is a console-based Java application that combines:
+
+```text
+        ┌───────────────────────────┐
+        │ HACKATHON DISCOVERY       │
+        ├───────────────────────────┤
+        │ User Management           │
+        │ Organization Management   │
+        │ Admin Management          │
+        │ Hackathon Management      │
+        │ Search & Filtering        │
+        │ Team Management           │
+        │ Registration              │
+        │ Watchlist                 │
+        │ DBMS Recommendations      │
+        │ Gemini AI                 │
+        │ Email Notifications       │
+        │ Audit Logging             │
+        └───────────────────────────┘
+```
+
+The goal is to make hackathon discovery and participation **simpler, more personalized, and more intelligent**.
